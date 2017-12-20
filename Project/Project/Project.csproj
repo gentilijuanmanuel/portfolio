@@ -94,11 +94,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Assets\css\admin-style.css" />
+    <Content Include="Areas\Admin\Assets\css\bootstrap.min.css" />
+    <Content Include="Areas\Admin\Assets\css\bootstrap.theme.min.css" />
+    <Content Include="Areas\Admin\Assets\css\font-awesome.min.css" />
+    <Content Include="Areas\Admin\Assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\Assets\images\ajax-loader.gif" />
+    <Content Include="Areas\Admin\Assets\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Assets\js\ini.js" />
+    <Content Include="Areas\Admin\Assets\js\jquery.anexgrid.min.js" />
+    <Content Include="Areas\Admin\Assets\js\jquery.form.js" />
+    <Content Include="Areas\Admin\Assets\js\jquery.js" />
+    <Content Include="Areas\Admin\Assets\js\jquery.validate.min.js" />
+    <Content Include="Areas\Admin\Assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\Experiencia\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Habilidades\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Testimonios\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Usuario\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Uploads\Perfil.JPG" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ExperienciaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HabilidadesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TestimoniosController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UsuarioController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -108,6 +145,21 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Assets\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\Assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

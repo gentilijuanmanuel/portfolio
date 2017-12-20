@@ -27,15 +27,5 @@ namespace Model
         public int Orden { get; set; }
 
         //Methods
-        public int Conexion()
-        {
-            int resultado = 0;
-            using (var ctx = new ProjectContext())
-            {
-                resultado = ctx.TablaDato.Count();
-            }
-            return resultado;
-        }
-
     }
 }

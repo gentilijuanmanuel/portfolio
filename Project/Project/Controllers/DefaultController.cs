@@ -9,12 +9,11 @@ namespace Project.Controllers
 {
     public class DefaultController : Controller
     {
-        private TablaDato tablaDato = new TablaDato();
 
         // GET: Default
-        public int Index()
+        public ActionResult Index()
         {
-            return tablaDato.Conexion();
+            return View();
         }
     }
 }

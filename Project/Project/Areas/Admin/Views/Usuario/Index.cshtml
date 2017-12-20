@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Acerca de mí";
+}
+
+<div id="yo" class="page">
+
+    <h1 class="page-header">Acerca de mí</h1>
+
+    <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Información</a></li>
+            <li role="presentation"><a href="#ubicacion" aria-controls="ubicacion" role="tab" data-toggle="tab">Ubicación</a></li>
+            <li role="presentation"><a href="#social" aria-controls="social" role="tab" data-toggle="tab">Social</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="info">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="Nombre" class="form-control" placeholder="Ingrese su nombre" />
+                </div>
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" name="Apellido" class="form-control" placeholder="Ingrese su apellido" />
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="text" name="Email" class="form-control" placeholder="Ingrese su correo" />
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su teléfono" />
+                </div>
+                <div class="form-group">
+                    <label>Foto de perfil</label>
+                    <input type="file" name="Imagen" />
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="ubicacion">
+                <div class="form-group">
+                    <label>País</label>
+                    <select class="form-control">
+                        <option value="">Seleccione un país</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Ciudad</label>
+                    <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su ciudad" />
+                </div>
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <textarea name="Direccion" class="form-control" placeholder="Ingrese su dirección"></textarea>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="social">
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-facebook"></i>
+                        </span>
+                        <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su Facebook" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Twitter</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-twitter"></i>
+                        </span>
+                        <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su Twitter" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>YouTube</label>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="fa fa-youtube"></i>
+                        </span>
+                        <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su YouTube" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-right well well-sm">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+</div>
