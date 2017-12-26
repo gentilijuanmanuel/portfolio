@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.Areas.Admin.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace Project.Areas.Admin.Controllers
 {
     public class TestimoniosController : Controller
     {
+        [Autenticado]
         // GET: Admin/Testimonios
         public ActionResult Index()
         {

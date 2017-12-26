@@ -7,3 +7,5 @@ C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Model\bin\Debug\Entit
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Model\obj\Debug\Model.dll
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Model\obj\Debug\Model.pdb
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Model\bin\Debug\Helper.dll
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Model\bin\Debug\Helper.pdb

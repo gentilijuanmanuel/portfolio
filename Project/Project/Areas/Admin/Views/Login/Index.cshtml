@@ -12,19 +12,22 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Acceso al sistema</div>
                 <div class="panel-body">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" name="Email" class="form-control" placeholder="Ingrese su correo electrónico" />
-                    </div>
-                    <div class="form-group">
-                        <label>Contraseña</label>
-                        <input type="password" name="Password" class="form-control" placeholder="Ingrese su password" />
-                    </div>
-                    <div class="text-right">
-                        <button class="btn btn-primary">
-                            Ingresar
-                        </button>
-                    </div>
+                    @using (Html.BeginForm("Acceder", "Login", FormMethod.Post))
+                    {
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" name="Email" class="form-control" placeholder="Ingrese su correo electrónico" />
+                        </div>
+                        <div class="form-group">
+                            <label>Contraseña</label>
+                            <input type="password" name="Password" class="form-control" placeholder="Ingrese su password" />
+                        </div>
+                        <div class="text-right">
+                            <button data-ajax="true" class="btn btn-primary">
+                                Ingresar
+                            </button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

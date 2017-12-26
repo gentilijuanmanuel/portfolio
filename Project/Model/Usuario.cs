@@ -5,6 +5,8 @@ namespace Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
+    using Helper;
 
     [Table("Usuario")]
     public partial class Usuario
@@ -66,5 +68,60 @@ namespace Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Testimonio> Testimonio { get; set; }
+
+        public ResponseModel Acceder(string email, string password)
+        {
+            var rm = new ResponseModel();
+
+            try
+            {
+                using (var ctx = new ProjectContext())
+                {
+                    password = HashHelper.MD5(password);
+                    var usuario = ctx.Usuario.Where(x => x.Email == email)
+                                             .Where(x => x.Password == password)
+                                             .SingleOrDefault();
+
+                    if(usuario != null)
+                    {
+                        SessionHelper.AddUserToSession(usuario.id.ToString());
+                        rm.SetResponse(true);
+                    }
+                    else
+                    {
+                        rm.SetResponse(false, "Correo o contraseña incorrectos.");
+                    }
+                }
+            }
+            catch (Exception E)
+            {
+
+                throw;
+            }
+
+            return rm;
+        }
+
+        public Usuario getUser(int id)
+        {
+            var usuario = new Usuario();
+
+            try
+            {
+                using (var ctx = new ProjectContext())
+                {
+                    usuario = ctx.Usuario.Where(x => x.id == id)
+                                         .SingleOrDefault();
+
+                }
+            }
+            catch (Exception E)
+            {
+
+                throw;
+            }
+
+            return usuario;
+        }
     }
 }

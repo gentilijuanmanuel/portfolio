@@ -57,3 +57,5 @@ C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\bin\es\System
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\obj\Debug\Project.dll
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\obj\Debug\Project.pdb
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\bin\Helper.dll
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\bin\Helper.pdb

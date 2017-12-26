@@ -1,0 +1,5 @@
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Helper\bin\Debug\Helper.dll
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Helper\bin\Debug\Helper.pdb
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Helper\obj\Debug\Helper.dll
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Helper\obj\Debug\Helper.pdb
