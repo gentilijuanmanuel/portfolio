@@ -26,6 +26,11 @@ namespace Model
             this.message = m;
 
             if (!r && m == "") this.message = "Ocurrio un error inesperado";
+
+            if (r)
+            {
+                this.message = "Operación exitosa";
+            }
         }
     }
 }

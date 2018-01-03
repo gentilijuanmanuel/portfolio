@@ -5,8 +5,12 @@ namespace Model
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Data.Entity;
     using System.Linq;
     using Helper;
+    using System.Data.Entity.Validation;
+    using System.Web;
+    using System.IO;
 
     [Table("Usuario")]
     public partial class Usuario
@@ -122,6 +126,64 @@ namespace Model
             }
 
             return usuario;
+        }
+
+        public ResponseModel Update(HttpPostedFileBase foto)
+        {
+            var rm = new ResponseModel();
+
+            try
+            {
+                using (var ctx = new ProjectContext())
+                {
+                    ctx.Configuration.ValidateOnSaveEnabled = false;
+
+                    var eUser = ctx.Entry(this);
+                    eUser.State = EntityState.Modified;
+
+                    //validación de la foto del lado de EF
+                    if (foto != null)
+                    {
+                        //nombre del archivo con la fecha, para que no se repita nunca.
+                        string file = DateTime.Now.ToString("yyyyMMddHHmmss") + Path.GetExtension(foto.FileName);
+
+                        //ruta en la que lo vamos a guardar
+                        foto.SaveAs(HttpContext.Current.Server.MapPath("~/uploads/" + file));
+
+                        // en nuestro modelo, el nombre del archivo
+                        this.Foto = file;
+                    }
+                    else
+                    {
+                        eUser.Property(x => x.Foto).IsModified = false;
+                    }
+
+                    //validación del password del usuario del lado de EF
+                    if (this.Password == null)
+                    {
+                        eUser.Property(x => x.Password).IsModified = false;
+                    }
+                    else
+                    {
+                        this.Password = HashHelper.MD5(this.Password);
+                    }
+
+                    ctx.SaveChanges();
+
+                    rm.SetResponse(true);
+                }
+            }
+            catch (DbEntityValidationException E)
+            {
+                throw;
+            }
+            catch (Exception E)
+            {
+
+                throw;
+            }
+
+            return rm;
         }
     }
 }

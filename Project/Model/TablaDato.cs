@@ -27,5 +27,27 @@ namespace Model
         public int Orden { get; set; }
 
         //Methods
+
+        public List<TablaDato> getTablaDato(string relacion)
+        {
+            List<TablaDato> datos = new List<TablaDato>();
+
+            try
+            {
+                using (var ctx = new ProjectContext())
+                {
+                    datos = ctx.TablaDato.OrderBy( x => x.Orden )
+                                         .Where( x => x.Relacion == relacion )
+                                         .ToList();
+                }
+            }
+            catch (Exception E)
+            {
+
+                throw;
+            }
+
+            return datos;
+        }
     }
 }

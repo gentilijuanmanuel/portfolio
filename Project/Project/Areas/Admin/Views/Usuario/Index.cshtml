@@ -1,94 +1,123 @@
-﻿@{
+﻿@model Usuario
+@{
     ViewBag.Title = "Acerca de mí";
+    List<TablaDato> paises = ViewBag.Paises;
 }
 
 <div id="yo" class="page">
 
     <h1 class="page-header">Acerca de mí</h1>
 
-    <div>
+    @using (Html.BeginForm("Save", "Usuario", FormMethod.Post))
+    {
+        <div>
 
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Información</a></li>
-            <li role="presentation"><a href="#ubicacion" aria-controls="ubicacion" role="tab" data-toggle="tab">Ubicación</a></li>
-            <li role="presentation"><a href="#social" aria-controls="social" role="tab" data-toggle="tab">Social</a></li>
-        </ul>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#info" aria-controls="info" role="tab" data-toggle="tab">Información</a></li>
+                <li role="presentation"><a href="#ubicacion" aria-controls="ubicacion" role="tab" data-toggle="tab">Ubicación</a></li>
+                <li role="presentation"><a href="#social" aria-controls="social" role="tab" data-toggle="tab">Social</a></li>
+            </ul>
 
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="info">
-                <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text" name="Nombre" class="form-control" placeholder="Ingrese su nombre" />
-                </div>
-                <div class="form-group">
-                    <label>Apellido</label>
-                    <input type="text" name="Apellido" class="form-control" placeholder="Ingrese su apellido" />
-                </div>
-                <div class="form-group">
-                    <label>E-mail</label>
-                    <input type="text" name="Email" class="form-control" placeholder="Ingrese su correo" />
-                </div>
-                <div class="form-group">
-                    <label>Teléfono</label>
-                    <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su teléfono" />
-                </div>
-                <div class="form-group">
-                    <label>Foto de perfil</label>
-                    <input type="file" name="Imagen" />
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="ubicacion">
-                <div class="form-group">
-                    <label>País</label>
-                    <select class="form-control">
-                        <option value="">Seleccione un país</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Ciudad</label>
-                    <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su ciudad" />
-                </div>
-                <div class="form-group">
-                    <label>Dirección</label>
-                    <textarea name="Direccion" class="form-control" placeholder="Ingrese su dirección"></textarea>
-                </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="social">
-                <div class="form-group">
-                    <label>Facebook</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-facebook"></i>
-                        </span>
-                        <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su Facebook" />
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="info">
+                    <div class="form-group">
+                        @Html.HiddenFor( x => x.id )
+                        @Html.LabelFor(x => x.Nombre)
+                        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", placeholder = "Charlie" })
+                        @Html.ValidationMessageFor(x => x.Nombre, null , new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Apellido)
+                        @Html.TextBoxFor(x => x.Apellido, new { @class = "form-control", placeholder = "Parker" })
+                        @Html.ValidationMessageFor(x => x.Apellido, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Email)
+                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", placeholder = "charlieparker@gmail.com" })
+                        @Html.ValidationMessageFor(x => x.Email, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Telefono)
+                        @Html.TextBoxFor(x => x.Telefono, new { @class = "form-control", placeholder = "444444" })
+                        @Html.ValidationMessageFor(x => x.Telefono, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label>Foto de perfil</label>
+                        <input type="file" name="foto" />
+                    </div>
+                    <div class="form-group">
+                        <div class="panel panel-danger">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">@Html.LabelFor(x => x.Password)</h3>
+                            </div>
+                            <div class="panel-body">
+                                @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "hola123" })
+                                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "label label-danger" })
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>Twitter</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-twitter"></i>
-                        </span>
-                        <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su Twitter" />
+                <div role="tabpanel" class="tab-pane" id="ubicacion">
+                    <div class="form-group">
+                        <label>País</label>
+                        <select name="Pais_id" class="form-control">
+                            @foreach (var i in paises)
+                            {
+                                <option @((Model.Pais_id == Convert.ToInt32(i.Valor)) ? "selected" : "") value="@i.Valor">@i.Descripcion</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Ciudad)
+                        @Html.TextBoxFor(x => x.Ciudad, new { @class = "form-control", placeholder = "Francia" })
+                        @Html.ValidationMessageFor(x => x.Ciudad, null, new { @class = "label label-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Direccion)
+                        @Html.TextAreaFor(x => x.Direccion, new { @class = "form-control", placeholder = "Belgrano 222" })
+                        @Html.ValidationMessageFor(x => x.Direccion, null, new { @class = "label label-danger" })
                     </div>
                 </div>
-                <div class="form-group">
-                    <label>YouTube</label>
-                    <div class="input-group">
-                        <span class="input-group-addon">
-                            <i class="fa fa-youtube"></i>
-                        </span>
-                        <input type="text" name="Ciudad" class="form-control" placeholder="Ingrese su YouTube" />
+                <div role="tabpanel" class="tab-pane" id="social">
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Facebook)
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-facebook"></i>
+                            </span>
+                            @Html.TextBoxFor(x => x.Facebook, new { @class = "form-control", placeholder = "facebook.com/charlieparker" })
+                            @Html.ValidationMessageFor(x => x.Facebook, null, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Twitter)
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-twitter"></i>
+                            </span>
+                            @Html.TextBoxFor(x => x.Twitter, new { @class = "form-control", placeholder = "twitter.com/charlieparker" })
+                            @Html.ValidationMessageFor(x => x.Twitter, null, new { @class = "label label-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.YouTube)
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-youtube"></i>
+                            </span>
+                            @Html.TextBoxFor(x => x.YouTube, new { @class = "form-control", placeholder = "youtube.com/charlieparker" })
+                            @Html.ValidationMessageFor(x => x.YouTube, null, new { @class = "label label-danger" })
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
-    </div>
-
-    <div class="text-right well well-sm">
-        <button class="btn btn-primary">Guardar</button>
-    </div>
+        <div class="text-right well well-sm">
+            <button data-ajax="true" class="btn btn-primary">Guardar</button>
+        </div>
+    }
 </div>
