@@ -128,7 +128,7 @@ namespace Model
             return usuario;
         }
 
-        public ResponseModel Update(HttpPostedFileBase foto)
+        public ResponseModel Save(HttpPostedFileBase foto)
         {
             var rm = new ResponseModel();
 

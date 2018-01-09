@@ -32,7 +32,7 @@ namespace Project.Areas.Admin.Controllers
             //ModelState.Remove("password");
             if (ModelState.IsValid)
             {
-                rm = model.Update(foto);
+                rm = model.Save(foto);
             }
 
             return Json(rm);
