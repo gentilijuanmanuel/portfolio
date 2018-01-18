@@ -54,7 +54,6 @@ namespace Model
             return experiencias;
         }
 
-
         public Experiencia getExperience(int id)
         {
             var experiencia = new Experiencia();
@@ -108,21 +107,44 @@ namespace Model
             return rm;
         }
 
-        public ResponseModel Delete(int id)
-        {
-            var rm = new ResponseModel();
+        //public ResponseModel Delete(int id)
+        //{
+        //    var rm = new ResponseModel();
 
+        //    try
+        //    {
+        //        using (var ctx = new ProjectContext())
+        //        {
+        //            this.id = id;
+
+        //            ctx.Entry(this).State = EntityState.Deleted;
+
+        //            ctx.SaveChanges();
+
+        //            rm.SetResponse(true);
+        //        }
+        //    }
+        //    catch (Exception E)
+        //    {
+
+        //        throw;
+        //    }
+
+        //    return rm;
+        //}
+
+        public void Delete(int id, byte tipo)
+        {
             try
             {
                 using (var ctx = new ProjectContext())
                 {
                     this.id = id;
+                    this.Tipo = tipo;
 
                     ctx.Entry(this).State = EntityState.Deleted;
 
                     ctx.SaveChanges();
-
-                    rm.SetResponse(true);
                 }
             }
             catch (Exception E)
@@ -130,8 +152,6 @@ namespace Model
 
                 throw;
             }
-
-            return rm;
         }
     }
 }

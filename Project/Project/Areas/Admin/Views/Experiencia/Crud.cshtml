@@ -20,12 +20,12 @@
 
     <div class="form-group">
         @Html.LabelFor(x => x.Nombre)
-        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", placeholder = "Apple" })
+        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", placeholder = (Model.Tipo == 1 ? "Apple" : "UTN Rosario") })
         @Html.ValidationMessageFor(x => x.Nombre, null, new { @class = "label label-danger" })
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Titulo)
-        @Html.TextBoxFor(x => x.Titulo, new { @class = "form-control", placeholder = "Desarrollador iOS" })
+        @Html.TextBoxFor(x => x.Titulo, new { @class = "form-control", placeholder = (Model.Tipo == 1 ? "Desarrollador iOS" : "Ing. en Sistemas") })
         @Html.ValidationMessageFor(x => x.Titulo, null, new { @class = "label label-danger" })
     </div>
     <div class="form-group">
@@ -40,7 +40,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Descripcion)
-        @Html.TextBoxFor(x => x.Descripcion, new { @class = "form-control", placeholder = "xCode y Swift 4" })
+        @Html.TextBoxFor(x => x.Descripcion, new { @class = "form-control", placeholder = (Model.Tipo == 1 ? "xCode y Swift" : "Programación, arquitectura de software") })
         @Html.ValidationMessageFor(x => x.Descripcion, null, new { @class = "label label-danger" })
     </div>
 

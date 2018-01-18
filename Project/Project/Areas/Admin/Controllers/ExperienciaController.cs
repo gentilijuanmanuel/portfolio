@@ -60,16 +60,24 @@ namespace Project.Areas.Admin.Controllers
             return Json(rm);
         }
 
-        public JsonResult Delete(int id)
+        //problema: no redirecciona a la tabla con las experiencias. PROBAR sin el self.
+        //public JsonResult Delete(int id)
+        //{
+        //    var rm = experiencia.Delete(id);
+
+        //    if (rm.response)
+        //    {
+        //        rm.href = "self";
+        //    }
+
+        //    return Json(rm, JsonRequestBehavior.AllowGet);
+        //}
+
+        public ActionResult Delete(byte tipo = 0, int id = 0)
         {
-            var rm = experiencia.Delete(id);
+            experiencia.Delete(id, tipo);
 
-            if (rm.response)
-            {
-                rm.href = "self";
-            }
-
-            return Json(rm);
+            return Redirect("~/admin/experiencia?tipo=" + tipo);
         }
         
     }
