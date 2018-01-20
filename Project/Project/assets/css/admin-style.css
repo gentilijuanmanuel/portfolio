@@ -1,0 +1,15 @@
+@import url('bootstrap.min.css');
+@import url('font-awesome.min.css');
+
+
+/* Menu */
+#menu a{font-size:1.2em;text-transform:none;}
+#menu .dropdown ul a{font-size:1em;display:block;text-align:left;}
+#user-pic{height:28px;border:1px solid #000;background:#eee;margin-right:6px;float:left;}
+
+.page{display:none;}
+.remove-margin{margin:0;}
+table .progress{margin-bottom:0;border-radius:0;}
+.progress-bar{border-radius:0;}
+
+.tab-pane{padding:20px 0;}

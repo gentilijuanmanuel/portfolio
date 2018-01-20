@@ -108,6 +108,15 @@
     <Content Include="Areas\Admin\Assets\js\jquery.js" />
     <Content Include="Areas\Admin\Assets\js\jquery.validate.min.js" />
     <Content Include="Areas\Admin\Assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="assets\css\admin-style.css" />
+    <Content Include="assets\css\anexsoft-theme\images\bg.jpg" />
+    <Content Include="assets\css\anexsoft-theme\style.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\jquery.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -124,6 +133,41 @@
     <Content Include="Areas\Admin\Views\Experiencia\Crud.cshtml" />
     <Content Include="Areas\Admin\Views\Habilidades\Crud.cshtml" />
     <Content Include="Areas\Admin\Views\Testimonios\Crud.cshtml" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\less\animated.less" />
+    <Content Include="assets\less\bordered-pulled.less" />
+    <Content Include="assets\less\core.less" />
+    <Content Include="assets\less\fixed-width.less" />
+    <Content Include="assets\less\font-awesome.less" />
+    <Content Include="assets\less\icons.less" />
+    <Content Include="assets\less\larger.less" />
+    <Content Include="assets\less\list.less" />
+    <Content Include="assets\less\mixins.less" />
+    <Content Include="assets\less\path.less" />
+    <Content Include="assets\less\rotated-flipped.less" />
+    <Content Include="assets\less\stacked.less" />
+    <Content Include="assets\less\variables.less" />
+    <Content Include="assets\scss\font-awesome.scss" />
+    <Content Include="assets\scss\_animated.scss" />
+    <Content Include="assets\scss\_bordered-pulled.scss" />
+    <Content Include="assets\scss\_core.scss" />
+    <Content Include="assets\scss\_fixed-width.scss" />
+    <Content Include="assets\scss\_icons.scss" />
+    <Content Include="assets\scss\_larger.scss" />
+    <Content Include="assets\scss\_list.scss" />
+    <Content Include="assets\scss\_mixins.scss" />
+    <Content Include="assets\scss\_path.scss" />
+    <Content Include="assets\scss\_rotated-flipped.scss" />
+    <Content Include="assets\scss\_stacked.scss" />
+    <Content Include="assets\scss\_variables.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -164,6 +208,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Shared\_User.cshtml" />
+    <Content Include="Views\Shared\_TopMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -174,7 +223,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Helper\Helper.csproj">
