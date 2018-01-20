@@ -1,0 +1,45 @@
+﻿@model Testimonio
+@{
+    ViewBag.Title = Model.Nombre;
+}
+
+<h2 class="page-header">
+    @Model.Nombre
+</h2>
+
+<ol class="breadcrumb">
+    <li><a href="~/admin/testimonios">Testimonios</a></li>
+    <li> @Model.Nombre </li>
+</ol>
+
+@using (Html.BeginForm("Save", "Testimonios", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.id)
+    @Html.HiddenFor(x => x.Usuario_id)
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Nombre)
+        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", placeholder = "Juan Alberto Marx" })
+        @Html.ValidationMessageFor(x => x.Nombre, null, new { @class = "label label-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.IP)
+        @Html.TextBoxFor(x => x.IP, new { @class = "form-control", placeholder = "" })
+        @Html.ValidationMessageFor(x => x.IP, null, new { @class = "label label-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Fecha)
+        @Html.TextBoxFor(x => x.Fecha, new { @class = "form-control", @readonly = "readonly", placeholder = "01-01-2018" })
+        @Html.ValidationMessageFor(x => x.Fecha, null, new { @class = "label label-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Comentario)
+        @Html.TextAreaFor(x => x.Comentario, new { @class = "form-control", placeholder = "Excelente profesional" })
+        @Html.ValidationMessageFor(x => x.Comentario, null, new { @class = "label label-danger" })
+    </div>
+
+    <div class="text-right well well-sm">
+        <button type="submit" data-ajax="true" class="btn btn-primary">Guardar</button>
+    </div>
+}
+
