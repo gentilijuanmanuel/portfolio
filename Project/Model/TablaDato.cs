@@ -49,5 +49,27 @@ namespace Model
 
             return datos;
         }
+
+        public TablaDato getDato(string relacion, string valor)
+        {
+            TablaDato dato = new TablaDato();
+
+            try
+            {
+                using (var ctx = new ProjectContext())
+                {
+                    dato = ctx.TablaDato.Where(x => x.Relacion == relacion)
+                                        .Where(x => x.Valor == valor)
+                                        .SingleOrDefault();
+                }
+            }
+            catch (Exception E)
+            {
+
+                throw;
+            }
+
+            return dato;
+        }
     }
 }

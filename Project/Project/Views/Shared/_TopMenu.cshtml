@@ -1,4 +1,5 @@
-﻿<div class="options-container-fixed">
+﻿@model Usuario
+<div class="options-container-fixed">
     <div class="options">
         <div class="row">
             <div class="col-sm-12">
@@ -11,9 +12,20 @@
                 <button class="btn btn-default" data-toggle="modal" data-target="#mContacto">
                     <i class="fa fa-envelope-o"></i> <span class="hidden-xs hidden-sm">Contactar</span>
                 </button>
-                <a title="Facebook" class="btn btn-default" href="https://www.facebook.com/jgentilicio" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                <a title="Twitter" class="btn btn-default" href="https://www.twitter.com/jgentilicio" target="_blank"><i class="fa fa-twitter"></i></a>
-                <a title="Youtube" class="btn btn-default" href="https://www.youtube.com/channel/UCGAQlEmqdB3ijLV077-FepQ?view_as=subscriber" target="_blank"><i class="fa fa-youtube"></i></a>
+                @if (Model.Facebook != null)
+                {
+                    <a title="Facebook" class="btn btn-default" href="@Model.Facebook" target="_blank"><i class="fa fa-facebook-official"></i></a>
+
+                }
+                @if (Model.Twitter != null)
+                {
+                    <a title="Twitter" class="btn btn-default" href="@Model.Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+
+                }
+                @if (Model.YouTube != null)
+                {
+                    <a title="Youtube" class="btn btn-default" href="@Model.YouTube" target="_blank"><i class="fa fa-youtube"></i></a>
+                }
             </div>
         </div>
     </div>

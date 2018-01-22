@@ -20,7 +20,7 @@ namespace Project.Areas.Admin.Controllers
         public ActionResult Index()
         {
             ViewBag.Paises = tablaDato.getTablaDato("pais");
-            return View(usuario.getUser( SessionHelper.GetUser() ));
+            return View(usuario.getUser( SessionHelper.GetUser(), false ));
         }
 
         public JsonResult Save(Usuario model, HttpPostedFileBase foto /* para validar la foto */)

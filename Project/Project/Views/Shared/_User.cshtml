@@ -2,14 +2,19 @@
 <div id="user">
     <div class="user-container-fixed">
         <div class="user-container">
-            <h1>Juan Manuel Gentili</h1>
-            <img class="pic" src="~/Uploads/Perfil.jpg" title="Juan Manuel Gentili" />
+            <h1>@Model.Nombre @Model.Apellido</h1>
+            <img class="pic" src="~/Uploads/@Model.Foto" title="@Model.Nombre @Model.Apellido" />
             <span class="title">Teléfono</span>
-            <span class="description">+54-3402-447921</span>
+            <span class="description">@Model.Telefono</span>
             <span class="title">Email</span>
-            <span class="description"><a>gentilijuanmanuel@gmail.com</a></span>
+            <span class="description">
+                <a href="mailto:@Model.Email">@Model.Email</a>
+            </span>
             <span class="title">Dirección</span>
-            <span class="description">San Martín 186<br />Arroyo Seco / Argentina</span>
+            <span class="description">
+                @Model.Direccion
+                <br />@Model.Ciudad / @Model.Pais.Descripcion
+            </span>
         </div>
     </div>
 </div>

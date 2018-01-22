@@ -1,5 +1,6 @@
 ﻿@{
-    Layout = null;
+    var userId = Project.App_Start.FrontOfficeStartApp.UsuarioVisualizado();
+    var user = new Usuario().getUser(userId, false);
 }
 
 <!DOCTYPE html>
@@ -15,9 +16,9 @@
 <body>
 
     <div id="cv-container">
-        @Html.Partial("~/views/shared/_User.cshtml")
+        @Html.Partial("~/views/shared/_User.cshtml", user)
         <div id="content">
-            @Html.Partial("~/views/shared/_TopMenu.cshtml")
+            @Html.Partial("~/views/shared/_TopMenu.cshtml", user)
             <div class="content-container container-fluid">
                 
                 @RenderBody()

@@ -2,7 +2,7 @@
     Layout = null;
     string controlador = ViewContext.RouteData.Values["Controller"].ToString().ToLower();
 
-    Model.Usuario usuario = new Model.Usuario().getUser(Helper.SessionHelper.GetUser());
+    Model.Usuario usuario = controlador == "login" ? new Usuario() : new Model.Usuario().getUser(Helper.SessionHelper.GetUser(), false);
 }
 <!DOCTYPE html>
 <html lang="es">

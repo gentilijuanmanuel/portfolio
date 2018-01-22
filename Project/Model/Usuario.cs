@@ -73,6 +73,9 @@ namespace Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Testimonio> Testimonio { get; set; }
 
+        [NotMapped]
+        public TablaDato Pais { get; set; }
+
         public ResponseModel Acceder(string email, string password)
         {
             var rm = new ResponseModel();
@@ -106,7 +109,7 @@ namespace Model
             return rm;
         }
 
-        public Usuario getUser(int id)
+        public Usuario getUser(int id, bool includes) //includes diferencia el tipo de información que quiero mostrar en la vista.
         {
             var usuario = new Usuario();
 
@@ -114,9 +117,21 @@ namespace Model
             {
                 using (var ctx = new ProjectContext())
                 {
-                    usuario = ctx.Usuario.Where(x => x.id == id)
+                    if (!includes)
+                    {
+                        usuario = ctx.Usuario.Where(x => x.id == id)
                                          .SingleOrDefault();
+                    }
+                    else
+                    {
+                        usuario = ctx.Usuario.Include("Experiencia")
+                                             .Include("Habilidad")
+                                             .Include("Testimonio")
+                                             .Where(x => x.id == id)
+                                             .SingleOrDefault();
+                    }
 
+                    usuario.Pais = new TablaDato().getDato("pais", usuario.Pais_id.ToString());
                 }
             }
             catch (Exception E)
