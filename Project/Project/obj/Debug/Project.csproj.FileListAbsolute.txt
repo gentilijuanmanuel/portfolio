@@ -59,3 +59,5 @@ C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\obj\Debug\Pro
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\obj\Debug\Project.pdb
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\bin\Helper.dll
 C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\bin\Helper.pdb
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\bin\Rotativa.Core.dll
+C:\Proyectos\Curso ASP NET MVC\Portfolio\portfolio\Project\Project\bin\Rotativa.MVC.dll

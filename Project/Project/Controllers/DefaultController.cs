@@ -63,5 +63,17 @@ namespace Project.Controllers
 
             return Json(rm);
         }
+
+        public ActionResult ExportarAPDF()
+        {
+            return new Rotativa.MVC.ActionAsPdf("PDF");
+        }
+
+        public ActionResult PDF()
+        {
+            return View(
+                    usuario.getUser(FrontOfficeStartApp.UsuarioVisualizado(), true)
+                );
+        }
     }
 }

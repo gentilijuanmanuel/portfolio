@@ -1,0 +1,62 @@
+﻿@model Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Nombre @Model.Apellido</title>
+</head>
+<body>
+    <h1>@Model.Nombre @Model.Apellido</h1>
+    <img src="~/Uploads/@Model.Foto" style="width: 250px; height: 300px;" />
+
+    @if (Model.Experiencia.Count > 0)
+    {
+        <h2>Empleos previos</h2>
+        <ul>
+            @foreach (var e in Model.Experiencia.Where(x => x.Tipo == 1).ToList())
+            {
+                <li>
+                    <b>@e.Nombre</b> ( @e.Desde - @(e.Hasta == null ? "Actualmente" : e.Hasta) )
+                    <br />
+                    @e.Titulo <br />
+                    <p>@e.Descripcion</p>
+                </li>
+            }
+        </ul>
+    }
+
+    @if (Model.Habilidad.Count > 0)
+    {
+        <h2>Habilidades obtenidas</h2>
+        <ul>
+            @foreach (var h in Model.Habilidad)
+            {
+                <li>
+                    <b>@h.Nombre</b>
+                    <br />
+                    <p>Dominio: @h.Dominio %</p>
+                </li>
+            }
+        </ul>
+    }
+
+    @if (Model.Experiencia.Count > 0)
+    {
+        <h2>Estudios realizados</h2>
+        foreach (var e in Model.Experiencia.Where(x => x.Tipo == 2).ToList())
+        {
+            <li>
+                <b>@e.Nombre</b> ( @e.Desde - @(e.Hasta == null ? "Actualmente" : e.Hasta) )
+                <br />
+                @e.Titulo <br />
+                <p>@e.Descripcion</p>
+            </li>
+        }
+    }
+</body>
+</html>
