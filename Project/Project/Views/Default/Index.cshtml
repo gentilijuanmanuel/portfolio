@@ -76,23 +76,11 @@
     </h2>
 }
 
-<form class="hidden-print">
-    <div class="form-group">
-        <label>Nombre</label>
-        <input class="form-control" placeholder="Ingresa tu Nombre" />
-    </div>
-
-    <div class="form-group">
-        <label>Testimonio</label>
-        <textarea class="form-control" placeholder="Ingresa tu testimonio"></textarea>
-    </div>
-
-    <div class="text-right">
-        <button class="btn btn-lg btn-primary">
-            Enviar
-        </button>
-    </div>
-</form>
+@Html.Partial("~/views/shared/_TestimonioForm.cshtml", new Testimonio{
+        Usuario_id = Project.App_Start.FrontOfficeStartApp.UsuarioVisualizado(),
+        Fecha = DateTime.Now.ToString("yyyy-MM-dd"),
+        IP = Request.ServerVariables["REMOTE_ADDR"]
+    })
 
 <hr />
 

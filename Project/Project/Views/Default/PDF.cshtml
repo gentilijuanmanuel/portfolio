@@ -48,15 +48,17 @@
     @if (Model.Experiencia.Count > 0)
     {
         <h2>Estudios realizados</h2>
-        foreach (var e in Model.Experiencia.Where(x => x.Tipo == 2).ToList())
-        {
+        <ul>
+            @foreach (var e in Model.Experiencia.Where(x => x.Tipo == 2).ToList())
+            {
             <li>
                 <b>@e.Nombre</b> ( @e.Desde - @(e.Hasta == null ? "Actualmente" : e.Hasta) )
                 <br />
                 @e.Titulo <br />
                 <p>@e.Descripcion</p>
             </li>
-        }
+            }
+        </ul>
     }
 </body>
 </html>

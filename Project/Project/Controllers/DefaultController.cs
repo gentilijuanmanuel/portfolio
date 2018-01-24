@@ -75,5 +75,43 @@ namespace Project.Controllers
                     usuario.getUser(FrontOfficeStartApp.UsuarioVisualizado(), true)
                 );
         }
+
+        //problema de redireccionamiento. Solucionarlo en varios lugares.
+
+        //public JsonResult SaveTestimony(Testimonio model)
+        //{
+        //    var rm = new ResponseModel();
+
+        //    if (ModelState.IsValid)
+        //    {
+        //        rm = model.Save();
+
+        //        if (rm.response)
+        //        {
+        //            rm.message = "Gracias por comentar";
+        //            rm.href = Url.Content("~/");
+        //        }
+        //    }
+
+        //    return Json(rm);
+        //}
+
+        public RedirectResult SaveTestimony(Testimonio model)
+        {
+            var rm = new ResponseModel();
+
+            if (ModelState.IsValid)
+            {
+                rm = model.Save();
+
+                if (rm.response)
+                {
+                    rm.message = "Gracias por comentar";
+                }
+            }
+
+            return Redirect("~/Default/Index");
+        }
+
     }
 }

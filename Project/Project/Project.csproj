@@ -225,6 +225,7 @@
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Shared\_Contacto.cshtml" />
     <Content Include="Views\Default\PDF.cshtml" />
+    <Content Include="Views\Shared\_TestimonioForm.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

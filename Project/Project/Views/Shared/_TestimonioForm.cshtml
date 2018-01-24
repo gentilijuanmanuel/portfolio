@@ -1,0 +1,24 @@
+﻿@model Testimonio
+@using (Html.BeginForm("SaveTestimony", "Default", FormMethod.Post, new { @class = "hidden-print"}))
+{
+    @Html.HiddenFor(x => x.Usuario_id)
+    @Html.HiddenFor(x => x.IP)
+    @Html.HiddenFor(x => x.Fecha)
+    <div class="form-group">
+        @Html.LabelFor(x => x.Nombre)
+        @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control", placeholder = "Bill" })
+        @Html.ValidationMessageFor(x => x.Nombre, null, new { @class = "label label-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Comentario)
+        @Html.TextBoxFor(x => x.Comentario, new { @class = "form-control", placeholder = "Excelente profesional." })
+        @Html.ValidationMessageFor(x => x.Comentario, null, new { @class = "label label-danger" })
+    </div>
+
+    <div class="text-right">
+        <button class="btn btn-lg btn-primary" data-ajax="true" data-reset="true">
+            Enviar
+        </button>
+    </div>
+}
