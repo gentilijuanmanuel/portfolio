@@ -119,6 +119,7 @@
     <Content Include="assets\css\anexsoft-theme\style.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\pdf.css" />
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="assets\js\bootstrap.min.js" />

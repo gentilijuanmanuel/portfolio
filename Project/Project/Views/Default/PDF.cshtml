@@ -13,7 +13,6 @@
 <body>
     <h1>@Model.Nombre @Model.Apellido</h1>
     <img src="~/Uploads/@Model.Foto" style="width: 250px; height: 300px;" />
-
     @if (Model.Experiencia.Count > 0)
     {
         <h2>Empleos previos</h2>
@@ -51,14 +50,93 @@
         <ul>
             @foreach (var e in Model.Experiencia.Where(x => x.Tipo == 2).ToList())
             {
-            <li>
-                <b>@e.Nombre</b> ( @e.Desde - @(e.Hasta == null ? "Actualmente" : e.Hasta) )
-                <br />
-                @e.Titulo <br />
-                <p>@e.Descripcion</p>
-            </li>
+                <li>
+                    <b>@e.Nombre</b> ( @e.Desde - @(e.Hasta == null ? "Actualmente" : e.Hasta) )
+                    <br />
+                    @e.Titulo <br />
+                    <p>@e.Descripcion</p>
+                </li>
             }
         </ul>
     }
 </body>
 </html>
+
+
+
+<!--  HAY ALGÚN DETALLE QUE NO PERMITE QUE SE RENDERICE EL PDF -->
+
+@*@model Usuario
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.Nombre @Model.Apellido</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="~/assets/css/pdf.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 class="title">@Model.Nombre @Model.Apellido</h1>
+    <div class="personal-data">
+        <p>@Model.Email</p>
+        <p>@Model.Telefono</p>
+        <p>@Model.Ciudad, @Model.Pais.Descripcion</p>
+    </div>
+
+    <img class="image" src="~/Uploads/@Model.Foto" />
+
+    @if (Model.Experiencia.Count > 0)
+    {
+        <h2 class="subtitle">Empleos previos</h2>
+        <ul class="text">
+            @foreach (var e in Model.Experiencia.Where(x => x.Tipo == 1).ToList())
+            {
+                <li>
+                    <b>@e.Nombre</b> ( @e.Desde - @(e.Hasta == null ? "Actualmente" : e.Hasta) ):
+                    <br />
+                    <p><i>Rol:</i> @e.Titulo</p>
+                    <p><i>Descripción:</i> @e.Descripcion</p>
+                </li>
+            }
+        </ul>
+    }
+
+    @if (Model.Habilidad.Count > 0)
+    {
+        <h2 class="subtitle">Habilidades obtenidas</h2>
+        <ul class="text">
+            @foreach (var h in Model.Habilidad)
+            {
+                <li>
+                    <b>@h.Nombre</b>:
+                    <br />
+                    <p>Dominio: @h.Dominio %</p>
+                </li>
+            }
+        </ul>
+    }
+
+    @if (Model.Experiencia.Count > 0)
+    {
+        <h2 class="subtitle">Estudios realizados</h2>
+        <ul class="text">
+            @foreach (var e in Model.Experiencia.Where(x => x.Tipo == 2).ToList())
+            {
+                <li>
+                    <b>@e.Nombre</b> ( @e.Desde - @(e.Hasta == null ? "Actualmente" : e.Hasta) ):
+                    <br />
+                    <p><i>Título:</i> @e.Titulo</p>
+                    <p><i>Descripción:</i> @e.Descripcion</p>
+                </li>
+            }
+        </ul>
+    }
+</body>
+</html>*@
+
